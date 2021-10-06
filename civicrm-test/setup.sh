@@ -12,4 +12,7 @@ cp ~/.ssh/civicrm.inventory my.inventory
 cp ~/.ssh/vault.txt vault.txt
 cp ~/.ssh/hs_secret secret
 
+eval `ssh-agent`
+ssh-add ~/.ssh/id_rsa_cronjob
+
 ansible-playbook -i my.inventory playbook-civicrm.yml -k --vault-password-file=vault.txt || exit -1
