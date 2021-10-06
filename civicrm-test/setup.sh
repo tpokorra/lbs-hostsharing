@@ -17,3 +17,4 @@ ssh-add ~/.ssh/id_rsa_cronjob
 
 ansible-playbook -i my.inventory playbook-uninstall.yml --vault-password-file=vault.txt || exit -1
 ansible-playbook -i my.inventory playbook-civicrm.yml --vault-password-file=vault.txt || exit -1
+ansible-playbook -i my.inventory playbook-uninstall.yml --vault-password-file=vault.txt || exit -1
