@@ -15,7 +15,7 @@ cp ~/.ssh/hs_secret secret
 eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa_cronjob
 
-ansible-playbook -i my.inventory playbook-uninstall.yml --vault-password-file=vault.txt || exit -1
-ansible-playbook -i my.inventory playbook-civicrm.yml --vault-password-file=vault.txt || exit -1
-ansible-playbook -i my.inventory playbook-update.yml --vault-password-file=vault.txt || exit -1
-ansible-playbook -i my.inventory playbook-uninstall.yml --vault-password-file=vault.txt || exit -1
+ansible-playbook -i my.inventory playbook-uninstall.yml || exit -1
+ansible-playbook -i my.inventory playbook-civicrm.yml || exit -1
+ansible-playbook -i my.inventory playbook-update.yml || exit -1
+ansible-playbook -i my.inventory playbook-uninstall.yml || exit -1
