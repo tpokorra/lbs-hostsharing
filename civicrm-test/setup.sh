@@ -9,6 +9,6 @@ eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa_cronjob
 
 ansible-playbook -i my.inventory.yml playbook-uninstall.yml || exit -1
-ansible-playbook -i my.inventory.yml playbook-civicrm.yml || exit -1
+ansible-playbook -i my.inventory.yml playbook-install.yml || exit -1
 ansible-playbook -i my.inventory.yml playbook-update.yml || exit -1
 ansible-playbook -i my.inventory.yml playbook-uninstall.yml || exit -1
