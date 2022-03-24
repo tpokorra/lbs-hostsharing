@@ -8,6 +8,8 @@ cp ~/.ssh/civicrm.inventory.yml my.inventory.yml
 eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa_cronjob
 
+# avoid error: Shared connection to example.org closed. Terminated. MODULE FAILURE See stdout/stderr for the exact error
+export ANSIBLE_SSH_ARGS="-o ServerAliveInterval=50"
 ansible-playbook -i my.inventory.yml playbook-uninstall.yml || exit -1
 ansible-playbook -i my.inventory.yml playbook-install.yml || exit -1
 ansible-playbook -i my.inventory.yml playbook-update.yml || exit -1
