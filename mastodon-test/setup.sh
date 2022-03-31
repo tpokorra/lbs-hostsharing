@@ -4,6 +4,8 @@ apt-get -y install ansible git || exit -1
 git clone https://github.com/tpokorra/Hostsharing-Ansible-Mastodon.git || exit -1
 cd Hostsharing-Ansible-Mastodon
 cp ~/.ssh/mastodon.inventory.yml my.inventory.yml
+# use the mastodon release from the inventory template
+cat inventory-template.yml | grep "mastodon_release" >> my.inventory.yml
 
 eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa_cronjob
