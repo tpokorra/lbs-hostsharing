@@ -7,6 +7,7 @@ cp ~/.ssh/civicrm.inventory.yml my.inventory.yml
 
 # use the civicrm version from the inventory template
 cat inventory-template.yml | grep "civicrm_version" >> my.inventory.yml
+cat inventory-template.yml | grep "composer_version" >> my.inventory.yml
 
 eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa_cronjob
