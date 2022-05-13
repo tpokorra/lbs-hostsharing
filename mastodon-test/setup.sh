@@ -6,6 +6,9 @@ cd Hostsharing-Ansible-Mastodon
 cp ~/.ssh/mastodon.inventory.yml my.inventory.yml
 # use the mastodon release from the inventory template
 cat inventory-template.yml | grep "mastodon_release" >> my.inventory.yml
+cat inventory-template.yml | grep "rubyversion" >> my.inventory.yml
+cat inventory-template.yml | grep "noderelease" >> my.inventory.yml
+cat inventory-template.yml | grep "nodeversion" >> my.inventory.yml
 
 eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa_cronjob
