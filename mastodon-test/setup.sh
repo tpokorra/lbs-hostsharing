@@ -27,5 +27,5 @@ FINISH
 
 
 ansible-playbook -i my.inventory.yml playbook-uninstall.yml || exit -1
-ansible-playbook -i my.inventory.yml playbook-mastodon.yml || exit -1
+ansible-playbook -i my.inventory.yml playbook-install.yml || exit -1
 ansible-playbook -i my.inventory.yml playbook-uninstall.yml || exit -1
