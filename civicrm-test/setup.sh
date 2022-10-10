@@ -7,6 +7,9 @@ cp ~/.ssh/civicrm.inventory.yml my.inventory.yml
 
 # read civicrm version from latest github tag that is not a .0 release
 civicrm_version=`curl https://github.com/civicrm/civicrm-core/tags --silent | grep "/civicrm/civicrm-core/releases/tag/" | grep -v '.0"' | head -n 1 | awk -F'"' '{print $6}' | awk -F'/' '{print $NF}'`
+
+# actually, the .0 is also a stable release, and can be followed by the next higher .0 release
+civicrm_version=`curl https://github.com/civicrm/civicrm-core/tags --silent | grep "/civicrm/civicrm-core/releases/tag/" | head -n 1 | awk -F'"' '{print $6}' | awk -F'/' '{print $NF}'`
 echo "using civicrm_version " $civicrm_version
 echo "      civicrm_version: $civicrm_version" >> my.inventory.yml
 # use the composer version from the inventory template
