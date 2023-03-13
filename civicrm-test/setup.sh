@@ -31,6 +31,7 @@ ControlPersist 10m
 FINISH
 
 ansible-playbook -i my.inventory.yml playbook-uninstall.yml || exit -1
+ansible-playbook -i my.inventory.yml playbook-init.yml || exit -1
 ansible-playbook -i my.inventory.yml playbook-install.yml || exit -1
 ansible-playbook -i my.inventory.yml playbook-update.yml || exit -1
 ansible-playbook -i my.inventory.yml playbook-uninstall.yml || exit -1
